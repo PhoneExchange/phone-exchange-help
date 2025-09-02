@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+.phonex-container {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tiptap h1 {
+  @apply text-3xl font-bold mt-4 mb-3;
+}
+.tiptap h2 {
+  @apply text-2xl font-semibold mt-3 mb-2;
+}
+.tiptap h3 {
+  @apply text-xl font-semibold mt-2 mb-2;
+}
+.tiptap p {
+  @apply leading-7;
+}
+
+.tiptap ul {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+}
+
+.tiptap ol {
+  list-style-type: decimal;
+  margin-left: 1.5rem;
+}
+
+.tiptap li {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.tiptap ul li {
+  list-style: disc;
+}
+
+.tiptap ol li {
+  list-style: decimal;
+}
+
+@media (max-width: 1399px) {
+  .phonex-container {
+    max-width: 1280px;
+  }
+}
+
+@media (max-width: 1279px) {
+  .phonex-container {
+    max-width: 1024px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .phonex-container {
+    max-width: 768px;
+  }
+}
+
+@media (max-width: 767px) {
+  .phonex-container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 640px) {
+  .phonex-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (max-width: 639px) {
+  .phonex-container {
+    max-width: 100%;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
+
+@media (max-width: 479px) {
+  .phonex-container {
+    max-width: 100%;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .phonex-container {
+    max-width: 100%;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
