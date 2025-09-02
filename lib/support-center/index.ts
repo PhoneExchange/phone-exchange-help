@@ -5,7 +5,7 @@ import { SupportArticle, SupportCategory } from "./types";
 import { sanitizeSupportHtml } from "../utils/safeHtml";
 
 //Categories
-export async function retrieveSupportCategories(id: string) {
+export async function retrieveSupportCategory(id: string) {
   return sdk.client.fetch<{ category: SupportCategory }>(`/store/support-center/categories/${id}`);
 }
 
@@ -27,5 +27,21 @@ export async function retrieveSupportArticle({ slug }: { slug: string }) {
 }
 
 export async function listSupportArticlesByCategory(categoryId: string) {
-  return sdk.client.fetch<{ articles: SupportArticle[] }>(`store/support-center/categories/${categoryId}/articles`);
+  return sdk.client
+    .fetch<{ articles: SupportArticle[] }>(`store/support-center/categories/${categoryId}/articles`)
+    .then(({ articles }) => {
+      return { articles: articles.filter((a) => a.status == "published") };
+    });
+}
+
+export async function listSupportArticles(q?: string) {
+  const qs = q ? `?q=${encodeURIComponent(q)}` : "";
+
+  return sdk.client
+    .fetch<{ articles: SupportArticle[] }>(`/store/support-center/articles${qs}`)
+    .then(({ articles }) => {
+      return {
+        articles: (articles ?? []).filter((a) => a.status === "published"),
+      };
+    });
 }

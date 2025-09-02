@@ -2,6 +2,7 @@ import { Manrope } from "next/font/google";
 import "./globals.css";
 import { Metadata } from "next";
 import { Header } from "@/components/common/Header";
+import { Footer } from "@/components/common/Footer";
 
 const manrope = Manrope({ subsets: ["latin"] });
 
@@ -32,6 +33,7 @@ export default function RootLayout({
       <body className={`w-full bg-[#fefefe] ${manrope.className}`}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

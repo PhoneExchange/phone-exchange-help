@@ -12,39 +12,39 @@
   margin-right: auto;
 }
 
-.tiptap h1 {
+.phonex-content h1 {
   @apply text-3xl font-bold mt-4 mb-3;
 }
-.tiptap h2 {
+.phonex-content h2 {
   @apply text-2xl font-semibold mt-3 mb-2;
 }
-.tiptap h3 {
+.phonex-content h3 {
   @apply text-xl font-semibold mt-2 mb-2;
 }
-.tiptap p {
+.phonex-content p {
   @apply leading-7;
 }
 
-.tiptap ul {
+.phonex-content ul {
   list-style-type: disc;
   margin-left: 1.5rem;
 }
 
-.tiptap ol {
+.phonex-content ol {
   list-style-type: decimal;
   margin-left: 1.5rem;
 }
 
-.tiptap li {
+.phonex-content li {
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
 }
 
-.tiptap ul li {
+.phonex-content ul li {
   list-style: disc;
 }
 
-.tiptap ol li {
+.phonex-content ol li {
   list-style: decimal;
 }
 
