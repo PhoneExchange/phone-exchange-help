@@ -10,7 +10,7 @@ export async function CategoryBlock({ category }: Props) {
   const { articles } = await listSupportArticlesByCategory(category.id);
 
   return (
-    <div>
+    <div className="mt-5">
       <div className="mb-3 space-y-1">
         <h3 className="text-lg font-semibold text-indigo-950">{category.title}</h3>
         <p className="text-sm text-gray-600">{category.description}</p>

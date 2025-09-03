@@ -12,6 +12,12 @@
   margin-right: auto;
 }
 
+.prose p:empty::before {
+  content: " ";
+  display: inline-block;
+  white-space: pre;
+}
+
 .phonex-content h1 {
   @apply text-3xl font-bold mt-4 mb-3;
 }

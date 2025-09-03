@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { retrieveSupportArticle, retrieveSupportCategory } from "@/lib/support-center";
+import { listSupportArticles, retrieveSupportArticle, retrieveSupportCategory } from "@/lib/support-center";
 import { ArticleView } from "@/components/article/ArticleView";
 import { CurvedBg } from "@/components/common/CurvedBg";
 import { RelatedArticles } from "@/components/article/RelatedArticles";
@@ -50,4 +50,12 @@ export default async function Page({ params }: Props) {
       <RelatedArticles article={article} />
     </section>
   );
+}
+
+export async function generateStaticParams() {
+  const { articles } = await listSupportArticles();
+
+  return articles.map(({ slug }) => ({
+    slug: slug,
+  }));
 }
